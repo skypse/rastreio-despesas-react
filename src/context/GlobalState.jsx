@@ -6,14 +6,14 @@ const initialState = {
   transactions: []
 }
 
-// Create context
+// Criando o contextoAPI
 export const GlobalContext = createContext(initialState);
 
-// Provider component
+// Componente provedor
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
-  // Actions
+  // Acoes
   function deleteTransaction(id) {
     dispatch({
       type: 'DELETE_TRANSACTION',
